@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RememberColor</string>
+    <string name="action_settings1">简单</string>
+    <string name="action_settings2">中级</string>
+    <string name="action_settings3">高级</string>
+    <string name="action_settings4">项目地址</string>
+    <string name="project_url">https://github.com/zhuiji7/ColorCard</string>
+</resources>
