@@ -1,8 +1,6 @@
 package com.muen.remembercolor;
 
-import android.content.Intent;
 import android.media.AudioManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.KeyEvent;
@@ -61,13 +59,7 @@ public class MainActivity extends AppCompatActivity {
             time_tv.setClickable(true);
             countDownTimer.cancel();
             return true;
-        }else if(id == R.id.action_settings4){
-            Uri uri = Uri.parse(getString(R.string.project_url));
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
-            return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
