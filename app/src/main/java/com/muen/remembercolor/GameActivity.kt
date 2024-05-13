@@ -17,15 +17,15 @@ class GameActivity : BaseActivity<ActivityGameBinding>() {
 
     override fun initListener() {
         super.initListener()
-        viewBinding.content.timeTv.setOnClickListener {
-            viewBinding.content.timeTv.isClickable = false
-            viewBinding.content.gameView.showFace()
+        viewBinding.timeTv.setOnClickListener {
+            viewBinding.timeTv.isClickable = false
+            viewBinding.gameView.showFace()
             showCountDownTimer(20)
         }
 
-        viewBinding.content.gameView.setOnFinishListener {
-            viewBinding.content.timeTv.isClickable = true
-            viewBinding.content.timeTv.text = "开始"
+        viewBinding.gameView.setOnFinishListener {
+            viewBinding.timeTv.isClickable = true
+            viewBinding.timeTv.text = "开始"
             Toast.makeText(this@GameActivity, "恭喜你完成游戏", Toast.LENGTH_LONG).show()
         }
     }
@@ -33,11 +33,11 @@ class GameActivity : BaseActivity<ActivityGameBinding>() {
     private fun showCountDownTimer(countDown: Int) {
         countDownTimer = object : CountDownTimer((countDown * 1000).toLong(), 1000) {
             override fun onTick(millisUntilFinished: Long) {
-                viewBinding.content.timeTv.text = "" + millisUntilFinished / 1000
+                viewBinding.timeTv.text = "" + millisUntilFinished / 1000
             }
 
             override fun onFinish() {
-                viewBinding.content.gameView.startGame()
+                viewBinding.gameView.startGame()
             }
         }.start()
     }
