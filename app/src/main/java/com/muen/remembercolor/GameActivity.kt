@@ -20,7 +20,12 @@ class GameActivity : BaseActivity<ActivityGameBinding>() {
         viewBinding.timeTv.setOnClickListener {
             viewBinding.timeTv.isClickable = false
             viewBinding.gameView.showFace()
-            showCountDownTimer(20)
+            val count = when (MMKVManage.level) {
+                2 -> 5
+                4 -> 10
+                else -> 20
+            }
+            showCountDownTimer(count)
         }
 
         viewBinding.gameView.setOnFinishListener {
@@ -37,6 +42,7 @@ class GameActivity : BaseActivity<ActivityGameBinding>() {
             }
 
             override fun onFinish() {
+                viewBinding.timeTv.text = "请找出颜色相同的两个色块"
                 viewBinding.gameView.startGame()
             }
         }.start()

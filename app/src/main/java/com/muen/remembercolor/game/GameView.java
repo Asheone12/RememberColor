@@ -17,6 +17,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 
+import com.muen.remembercolor.MMKVManage;
 import com.muen.remembercolor.R;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class GameView extends View {
             Color.rgb(233, 89, 20), Color.BLUE, Color.CYAN, Color.DKGRAY, Color.MAGENTA, Color.GREEN, Color.YELLOW, Color.RED,Color.rgb(145, 44, 238),};
 
     private Context mycontext;
-    private int level = 4;//默认等级
+    private int level = MMKVManage.INSTANCE.getLevel();//默认等级
     private int padding = 3;//色块与色块之间的距离
     private int canvasH;
     private int canvasW;
