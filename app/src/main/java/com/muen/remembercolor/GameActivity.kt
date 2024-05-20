@@ -17,6 +17,10 @@ class GameActivity : BaseActivity<ActivityGameBinding>() {
 
     override fun initListener() {
         super.initListener()
+        viewBinding.backTv.setOnClickListener {
+            finish()
+        }
+
         viewBinding.timeTv.setOnClickListener {
             viewBinding.timeTv.isClickable = false
             viewBinding.gameView.showFace()
@@ -42,7 +46,7 @@ class GameActivity : BaseActivity<ActivityGameBinding>() {
             }
 
             override fun onFinish() {
-                viewBinding.timeTv.text = "请找出颜色相同的两个色块"
+                viewBinding.timeTv.text = "请找出同色的方块"
                 viewBinding.gameView.startGame()
             }
         }.start()
